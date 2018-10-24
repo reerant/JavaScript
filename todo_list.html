@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>todo-list</title>
+  <script src="myScript.js"></script>
+  <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+
+<body>
+
+  <div class="content">
+    <img src="pics/checked.png" alt="checked" style="float:right;width:250px;height:200px;">
+    <h1>My ToDo-list</h1>
+    <p>Valitse alasvetovalikosta tehtävän kiireellisyystaso.</p>
+
+    <!--lomake sisältää alasvetovalikon, tekstikentän sekä lähetä- ja tyhjennä-painikkeet-->
+
+    <form name="form">
+      <select name="priority" id="priority">
+        <option value="empty">Ei valintaa</option>
+        <option value="high">Korkea</option>
+        <option value="medium">Keskitaso</option>
+        <option value="low">Matala</option>
+      </select>
+      <br>
+      <input type="text" name="text" id="text" placeholder="Kirjoita tähän tekstiä">
+      <br>
+      <input onclick="addText()" id="add" type="button" value="Lisää listalle">
+      <input type="reset" id="reset" value="Tyhjennä kenttä">
+    </form>
+    
+    <ul id="list"></ul>
+    <br>
+    <!--Halutessaan koko listan voi piilottaa klikkaamalla checkboksia.-->
+    <label>
+      <input onchange="hide()" name="hide" type="checkbox">
+      Piilota lista 
+    </label>
+
+  </div>
+</body>
+
+</html>
