@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Finnkinon elokuvat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="myScript.js"></script>
+  <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+
+<!-- Teatterit ladataan pudotusvalikkoon näkyviin heti sivun latauduttua. -->
+
+<body onload="lataaTeatterit();">
+  <div class="jumbotron">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Finnkinon elokuvat</h1>
+        </div>
+        <div class="col-md-6">
+          <img src="pics/film.png" alt="filminauha" style="width:auto;height:150px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="hakukenttä">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Finnkinon eri teattereiden elokuvatiedot</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Valitse ensin päivämäärä sekä haluamasi alue tai elokuvateatteri ja klikkaa "Hae". </p>
+      </div>
+    </div>
+
+    <div class="row" id="valikot">
+      <div class="col-md-12">
+        <!-- Käyttäjä voi valita pvm sekä
+            pudotusvetovalikosta haluamansa teatterin/alueen.-->
+        <form><input id="pvm" type="date"></form>
+        <select id="list"></select>
+      </div>
+    </div>
+    <div id="hakunappi" class="row">
+      <div class="col-md-12">
+        <!-- Nappia klikkaamalla ladataan valitun alueen/teatterin leffaohjelmisto. -->
+        <button onclick="lataaOhjelmisto()"> Hae</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Kun haluamasi teatterin kaikki elokuvat on listattu, voit tarkentaa hakua tiettyyn elokuvaan alla olevan
+          hakukentän avulla.
+        </p>
+        <!-- Tekstikentän avulla voidaan etsiä leffoja, suodatin aloittaa suodattamisen heti näppäilyn alettua. -->
+        <form><input onkeyup="suodataLeffat()" id="hakuString" type="text" placeholder="Kirjoita elokuvan nimi" name="search"></form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="ohjelmisto"></div>
+
+  <div class="footer">
+    <p>Teattereiden ja elokuvien data ladataan Finnkinon <a href="https://www.finnkino.fi/xml">XML
+        Services-rajapinnasta.</a></p>
+  </div>
+
+</body>
+
+</html>

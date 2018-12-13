@@ -1,0 +1,58 @@
+.jumbotron{
+background-color: rgb(101, 104, 112);
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgb(20, 19, 19);
+    font-size: 50px;
+ }
+
+.leffa{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+#ohjelmisto{
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+#hakunappi{
+     margin-bottom: 10px;
+}
+
+#pvm{
+    margin-bottom: 10px;
+}
+
+#list{
+    margin-bottom: 10px; 
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(101, 104, 112);
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+
+ a:link {
+    color: white;
+    text-decoration: underline; 
+}
+
+a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+  a:hover {
+    color:  rgb(169, 173, 184);
+}
